@@ -1,0 +1,65 @@
+{
+  "article": {
+    "title": "Vithamas Technologies",
+    "paragraph": "<div>Ant Design, a design language for background applications, is refined by Ant UED Team.</div>\n<div>Ant Design, a design language for background applications, is refined by Ant UED Team.</div>\n<div>Ant Design, a design language for background applications, is refined by Ant UED Team.</div>\n<p>&nbsp;</p>",
+    "avatar": "https://joeschmoe.io/api/v1/random",
+    "photo": "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+  },
+  "job": {
+    "title": "Frontend Developer",
+    "sub_title": "Vithamas Technologies, Mysore",
+    "job_type": "Full-Time",
+    "job_description":"<div>We are looking for a Front-End Web Developer who is motivated to combine the</div>\n<div>art of design with the art of programming. Responsibilities will include translation of the</div>\n<div>UI/UX design wireframes to actual code that will produce visual elements of the application.</div>\n<div>You will work with the UI/UX designer and bridge the gap between graphical design</div>\n<div>and technical implementation, taking an active role on both sides and defining</div>\n<div>how the application looks as well as how it works.</div>\n<div>&nbsp;</div>",
+    "responsibilities": "<ul>\n<li>Develop new user-facing features</li>\n<li>Build reusable code and libraries for future use</li>\n<li>Ensure the technical feasibility of UI/UX designs</li>\n<li>Optimize application for maximum speed and scalability</li>\n<li>Assure that all user input is validated before submitting to back-end</li>\n</ul>\n<div>&nbsp;</div>",
+    "skills_qualification":"<ul>\n<li>Proficient understanding of web markup, including HTML5, CSS3</li>\n<li>Basic understanding of server-side CSS pre-processing platforms, such as LESS and SASS</li>\n<li>Proficient understanding of client-side scripting and JavaScript frameworks, including jQuery</li>\n<li>Good understanding of advanced JavaScript libraries and frameworks, such as AngularJS, KnockoutJS, BackboneJS, ReactJS, NodeJS etc</li>\n<li>Good understanding of asynchronous request handling, partial page updates, and AJAX.<p>",
+    "salary_range": "2,80,000pa."
+  },
+  "quiz": {
+    "title": "Knowledge Questions",
+    "sub_title": "Skills, JavaScript",
+    "question": "What will be the output of the following code snippet? ?",
+    "code": "<p><code> const obj1 ={first: 20, second: 30, first: 50;}  </code><br><code> console.log(obj1);</code></p>",
+    "option1": "First:20,second:30",
+    "option2": "First:50,second:30",
+    "option3": "First:20,second:30,First:50",
+    "option4": "Syntax Error"
+  },
+  "newjob": {
+    "title": "Back End Developer",
+    "sub_title": "Shiryam Technologies ,India(Remote)",
+    "job_type": "Full-Time",
+   
+    "responsibilities": "<ul>\n<li>Writing reusable, testable, and efficient code</li>\n<li>Design and implementation of low-latency, high-availability, and performant applications</li>\n<li>Integration of user-facing elements developed by front-end developers with server-side logic</li>\n<li>Implementation of security and data protection</p>",
+    "skills_qualification": "<ul>\n<li>Expert in Python/Node.js</li>\n<li>Familiarity with some ORM (Object Relational Mapper) libraries</li>\n<li>Able to integrate multiple data sources and databases into one system</li>\n<li>Understanding of the threading limitations of Python, and multi-process architecture</li>\n<li>Good understanding of server-side templating languages</li>\n<li>\n<div>Understanding of accessibility and security compliance</div>\n</li>\n<li>Knowledge of user authentication and authorization between multiple systems, servers, and environments</li>\n<li>Understanding of the differences between multiple delivery platforms, such as mobile vs desktop, and optimizing output to match the specific platform</li>\n<li>Able to create database schemas that represent and support business processes</li>\n<li>Strong unit test and debugging skills<p>",
+    "salary_range": "2,50,000pa."
+  },
+  "carousel": {
+    "title": "Carousel",
+    "sub_title": "Image Carousel",
+    "image1": "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60 ",
+    "image2": "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60 ",
+    "image3": " https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    "image4": "https://images.unsplash.com/photo-1550167164-1b67c2be3973?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60 ",
+    "image5": " https://images.unsplash.com/photo-1550338861-b7cfeaf8ffd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+  },
+  "video": {
+    "title": "Video",
+    "sub_title": "player",
+    "src": "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+  },
+  "internship": {
+    "title": "Deep Learning Programming",
+    "sub_title": "Bosch, Bangalore",
+    "internship_type": "Full-Time",
+    "responsibilities": "<p>Selected intern's day-to-day responsibilities include:</p>\n<p>1. Work on Python coding (Pytorch/TensorFlow/Keras)<br>2. Work on deep learning<br>3. Work on machine learning</p>",
+    "Skill": "<p style=\"text-align: justify;\">Deep Learning&nbsp; &nbsp; &nbsp; &nbsp;Machine Learning&nbsp; &nbsp; &nbsp; &nbsp; Python</p>",
+    "salary_range": "2,80,000pa.",
+    "num_of_openings":"5",
+    "intership_description": "<div>\n<div>Start Date&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Duration&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Stipend&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Apply_by</div>\n</div>",   
+    "intership_description1":"<p>Immediately&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 months&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 15,ooo/month&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;20 aug'22</p>",
+    "duration":"3 Months",
+    "stipend":"18,000 /month",
+    "apply_by":"18 Aug' 22",
+    "who_can_apply": "<p>Only those candidates can apply who:</p>\n<ol>\n<li>are available for full time (in-office) internship</li>\n<li>&nbsp;can start the internship between 3rd Aug'22 and 7th Sep'22</li>\n<li>are available for duration of 3 months</li>\n<li>are from or open to relocate to Bangalore</li>\n<li>have relevant skills and interests</li>\n</ol>"
+  }
+}
