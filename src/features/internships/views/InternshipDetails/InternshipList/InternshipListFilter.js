@@ -67,9 +67,9 @@ function InternshipListFilter(props) {
 
       <Form.Item name="work_type" label="Work type">
         <Select mode="multiple">
-          <Option value="on-site">on-site</Option>
+          <Option value="office">Office</Option>
           <Option value="hybrid">Hybrid</Option>
-          <Option value="remort">Remort</Option>
+          <Option value="remote">Remote</Option>
         </Select>
       </Form.Item>
 

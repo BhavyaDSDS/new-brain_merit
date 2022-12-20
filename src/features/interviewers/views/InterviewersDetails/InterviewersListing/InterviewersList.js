@@ -32,10 +32,10 @@ const filterIntial = {
   // companies_worked_for:[],
   // cost_per_interview:[],
   // domains:[],
-  total_exp:[0,0],
-  relevant_experience:[0,0],
-  no_of_interviews_conducted:[0,0],
-  // pri_tech_skills:[]
+  // total_exp:[0,0],
+  // relevant_experience:[0,0],
+  // no_of_interviews_conducted:[0,0],
+  //  pri_tech_skills:[]
 }
 function InterviewersList() {
   const [form] = Form.useForm();
@@ -706,7 +706,10 @@ function InterviewersList() {
             form={form}
             onFinish={handleFinish}
             layout="vertical"
-            initialValues={filterIntial}
+            //initialValues={filterIntial}
+            initialValues={{ total_exp:[0,0],
+              relevant_experience:[0,0],
+              no_of_interviews_conducted:[0,0],}}
             onFieldsChange={() => {
               // add your additionaly logic here
               setIsTouched(true);

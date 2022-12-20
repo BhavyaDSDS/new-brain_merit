@@ -25,7 +25,14 @@ import Slider from "react-slick";
 import { FormOutlined } from "@ant-design/icons";
 const { Search } = Input;
 const {CheckableTag}=Tag;
-
+const filterIntial={
+  // company_size:undefined,
+  // domain:[],
+  // technologies:[],
+  // work_type:[],
+  // job_locations:[],
+  // year_founded:undefined,
+}
 
 
 function SampleNextArrow(props) {
@@ -60,6 +67,7 @@ function EmployersList() {
   const [buttonName,setbuttonName]=useState("Clear");
   const [newFilter, setNewFilter] = useState(false);
   const [isTouched, setIsTouched] = useState();
+  const [filterValue, setFilterValue] = useState(filterIntial);
 
   const [customFilter, setCustomFilter] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -68,7 +76,7 @@ function EmployersList() {
     setModalVisible,
   ]);
   const locationsList = useSelector((state) => state.utils.locationsList);
-  const employersList = useSelector((state) => state.employer.listEmployers);
+  const employersList = useSelector((state) => state.employer.employerFilterList);
   const domainList = useSelector((state) => state.utils.domainList);
 
   const employerState = useSelector((state) => state.employer)
@@ -130,7 +138,7 @@ function EmployersList() {
   const onSearch = (value) => console.log(value);
 
   useEffect(() => {
-    dispatch(getEmployerList());
+    dispatch(getEmployerFilterList("is_deleted=false"));
   }, []);
 
   const showDrawer = () => {
@@ -241,19 +249,18 @@ function EmployersList() {
     {
       title: "Total funding",
       dataIndex: "total_fund",
-      render: (_, record) =>{
-        if(record.total_fund != null){
-        if(record.total_fund.number != null ){
-            if(record.total_fund.type === 'B'){
-              return <p>{record.total_fund.number/1000000000}{record.total_fund.type}</p>
-            } else if(record.total_fund.type === 'M'){
-              return <p>{record.total_fund.number/1000000}{record.total_fund.type}</p>
-            } else {
-              return <p>{record.total_fund.number/1000}{record.total_fund.type}</p>
-            }
-        }
-      }
-      }    
+     // render: (_, record) =>{
+       // console.log("record",record)
+      //  if(record.total_fund != null){
+      //       if(record.total_fund_type === 'B'){
+      //         return <p>{record.total_fund/1000000000}{record.total_fund_type}</p>
+      //       } else if(record.total_fund_type === 'M'){
+      //         return <p>{record.total_fund/1000000}{record.total_fund_type}</p>
+      //       } else {
+      //         return <p>{record.total_fund/1000}{record.total_fund_type}</p>
+      //       }
+      // }
+     // }    
     },
     {
       title: "Technologies used",
@@ -310,48 +317,50 @@ function EmployersList() {
     //     (values.year_founded = year_founded.value + "-01-01");
        // values.year_founded=moment().values.year_founded._i;
       // console.log("values.year_founded",moment(values.year_founded._d,"YYYY-MM-DD"));
-      if (values.year_founded) {
-        values.year_founded_from = values.year_founded[0].format(
-          "YYYY-MM-01"
-        );
-        values.year_founded_to = values.year_founded[1].format(
-          "YYYY-MM-01"
-        );
+
+
+      // if (values.year_founded) {
+      //   values.year_founded_from = values.year_founded[0].format(
+      //     "YYYY-MM-01"
+      //   );
+      //   values.year_founded_to = values.year_founded[1].format(
+      //     "YYYY-MM-01"
+      //   );
+      //}
+      let data = "is_deleted=false";
+      if (values.company_size != undefined) {
+        data = data + "&company_size=" + values.company_size;
       }
-      // let data = "is_deleted=false";
-      // if (values.company_size!= undefined) {
-      //   data = data + "&company_size=" + values.company_size;
-      // }
-      // if (values.domain != undefined) {
-      //   data = data + "&domain__in=" + values.domain[0];
-      //   if (values.domain.length > 1) {
-      //     values.domain.map((item) => (data = data + "__" + item));
-      //   }
-      // }
-      // if (values.technologies != undefined) {
-      //   data = data + "&technologies__in=" + values.technologies[0];
-      //   if (values.technologies.length > 1) {
-      //     values.technologies.map((item) => (data = data + "__" + item));
-      //   }
+      if (values.domain != undefined) {
+        data = data + "&domain__in=" + values.domain[0];
+        if (values.domain.length > 1) {
+          values.domain.map((item) => (data = data + "__" + item));
+        }
+      }
+      if (values.technologies != undefined) {
+        data = data + "&technologies__in=" + values.technologies[0];
+        if (values.technologies.length > 1) {
+          values.technologies.map((item) => (data = data + "__" + item));
+        }
   
-      // }
+      }
       // if (values.total_fund_from.number != undefined && values.total_fund_from.type) {
-      //   data = data + "&active=" + values.total_fund_from.number;
+      //   data = data + "&total_fund_from=" + values.total_fund_from.number;
   
       // }
       // if (values.total_fund_to.number != undefined && values.total_fund_to.type) {
-      //   data = data + "&active=" + values.total_fund_to.number;
+      //   data = data + "&total_fund_to=" + values.total_fund_to.number;
   
       // }
 
-      // if (values.work_type != undefined) {
-      //   data = data + "&work_type__in=" + values.work_type[0];
-      //   if (values.work_type.length > 1) {
-      //     values.work_type.map((item) => (data = data + "__" + item));
-      //   }
-      // }
+      if (values.work_type != undefined) {
+        data = data + "&work_type__in=" + values.work_type[0];
+        if (values.work_type.length > 1) {
+          values.work_type.map((item) => (data = data + "__" + item));
+        }
+      }
       // if (values.job_locations != undefined) {
-      //   data = data + "&job_locations__in=" + values.job_locations[0];
+      //   data = data + "&location_id__in=" + values.job_locations[0];
       //   if (values.job_locations.length > 1) {
       //     values.job_locations.map((item) => (data = data + "__" + item));
       //   }
@@ -368,9 +377,9 @@ function EmployersList() {
       //   }
       // }
 
-      //console.log("empList filter submit: ",data)
+      console.log("empList filter submit: ",data)
 
-//dispatch(getEmployerFilterList(data));
+dispatch(getEmployerFilterList(data));
 
 
       // else {
@@ -577,11 +586,11 @@ function newCustomFilter(){
               type="text"
               onClick={() => {
                 setFilterActive(false);
-              //  var data = "is_deleted=false";
-               // dispatch(getEmployerFilterList(data));
+               var data = "is_deleted=false";
+                dispatch(getEmployerFilterList(data));
                 setIsTouched(false);
               
-                initialValues={filterIntial}
+               // initialValues={filterIntial}
                  setbuttonName("Clear");
               }}>
 
@@ -671,8 +680,22 @@ function newCustomFilter(){
             resetFormFields();
           }}
           footer={[
-            <Button   style={{ float: "left" }} onClick={()=>{ hideModal();}}>Cancel</Button>,
-            <Button onclick={()=>{ form.setFieldsValue(filterIntial);}}>{buttonName}</Button>,
+            <Button   style={{ float: "left" }} 
+            onClick={()=>{ hideModal();}}>Cancel</Button>,
+            <Button onclick={()=>{ 
+              if(filterActive){
+                console.log("filterActive")
+             // form.setFieldsValue(filterIntial);
+             // setFilterValue(filterIntial);
+              setbuttonName("Clear");
+
+              }
+              else{
+              //  form.setFieldsValue(filterIntial);
+
+              }
+            }}>
+                {buttonName}</Button>,
             // <Button 
             // onClick={()=>newCustomFilter()}
             // disabled={!customFilter || !isTouched}
@@ -693,9 +716,10 @@ function newCustomFilter(){
           <Form form={form} 
           onFinish={handleFinish} 
           layout="vertical"
+         // initialValues={filterIntial}
+
           initialValues={{
-            total_fund_from:{type:"M"},
-            total_fund_to:{type:"M"}
+            total_fund_type:{type:"M"}
 
           }}
           onFieldsChange={() => {

@@ -90,14 +90,14 @@ function JobPostingFilter(props) {
         <Select mode="multiple">
           <Option value="office">Office</Option>
           <Option value="hybrid">Hybrid</Option>
-          <Option value="remort">Remort</Option>
+          <Option value="remote">Remote</Option>
         </Select>
       </Form.Item>
 
       <Form.Item name="job_type" label="Job type" >
         <Select mode="multiple">
-          <Option value="full_time">Full time</Option>
-          <Option value="contract">Contract</Option>
+          <Option value="full">Full time</Option>
+          <Option value="temp">Contract</Option>
          {/* // <Option value="temp/contract">Temp / Contract</Option> */}
         </Select>
       </Form.Item>

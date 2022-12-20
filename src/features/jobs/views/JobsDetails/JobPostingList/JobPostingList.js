@@ -477,12 +477,12 @@ let workLocation;
       }
 
     }
-    // if (values.job_type != undefined) {
-    //   data = data + "&job_type__in=" + values.job_type[0];
-    //   if (values.job_type.length > 1) {
-    //     values.job_type.map((item) => (data = data + "__" + item));
-    //   }
-    // }
+    if (values.job_type != undefined) {
+      data = data + "&job_type__in=" + values.job_type[0];
+      if (values.job_type.length > 1) {
+        values.job_type.map((item) => (data = data + "__" + item));
+      }
+    }
     if (values.total_exp != undefined) {
       if (values.total_exp[0] > 0 || values.total_exp[1] > 0) {
         data = data + "&total_exp__range=" + values.total_exp[0] + "__" + values.total_exp[1];
@@ -495,12 +495,12 @@ let workLocation;
         }
   
       }
-      // if (values.work_type != undefined) {
-      //   data = data + "&type__in=" + values.work_type[0];
-      //   if (values.work_type.length > 1) {
-      //     values.work_type.map((item) => (data = data + "__" + item));
-      //   }
-      // }
+      if (values.work_type != undefined) {
+        data = data + "&type__in=" + values.work_type[0];
+        if (values.work_type.length > 1) {
+          values.work_type.map((item) => (data = data + "__" + item));
+        }
+      }
       // if (values.salary_range != undefined) {
       //   console.log("salary range",values.salary_range[0],values.salary_range[1])
       //   if (values.salary_range[0] > 0 || values.salary_range[1] > 0) {
@@ -529,16 +529,16 @@ let workLocation;
         }
   
       }
-      // if (values.job_locations != undefined) {
-      //   //console.log("job_locations",values.job_locations)
-      //   data = data + "&location_id__in=" + values.job_locations[0];
+      if (values.job_locations != undefined) {
+        //console.log("job_locations",values.job_locations)
+        data = data + "&location_id__in=" + values.job_locations[0];
 
-      //   if (values.job_locations.length > 1) {
-      //     values.job_locations.map((item) => (data = data + "__" + item)     
-      //     );
-      //     console.log("job_locations",data)
-      //   }
-      //   }
+        if (values.job_locations.length > 1) {
+          values.job_locations.map((item) => (data = data + "__" + item)     
+          );
+          console.log("job_locations",data)
+        }
+        }
     //    values.salary_range_min = values.salary_range[0] * 100000;
     //  values.salary_range_max = values.salary_range[1] * 100000;
       dispatch(getJobPostingFilterList(data));

@@ -39,15 +39,17 @@ const {setCustomFilter}=props
         label="Company size"
       >
         <Select allowClear>
-          <Option value="0-1 employees">0-1 employees</Option>
-          <Option value="2-10 employees">2-10 employees</Option>
-          <Option value="11-50 employees">11-50 employees</Option>
-          <Option value="51-200 employees">51-200 employees</Option>
-          <Option value="201-500 employees">201-500 employees</Option>
-          <Option value="501-1,000 employees">501-1,000 employees</Option>
-          <Option value="1,001-5,000 employees">1,001-5,000 employees</Option>
-          <Option value="5,001-10,000 employees">5,001-10,000 employees</Option>
-          <Option value="10,001+ employees">10,001+ employees</Option>
+          <Option value="0">0-1 employees</Option>
+          <Option value="2">2-10 employees</Option>
+          <Option value="11">11-50 employees</Option>
+          <Option value="51">51-200 employees</Option>
+          <Option value="201">201-500 employees</Option>
+          <Option value="501">501-1,000 employees</Option>
+          <Option value="1,001">1,001-5,000 employees</Option>
+          <Option value="5,001">5,001-10,000 employees</Option>
+          <Option value="10,001">10,001+ employees</Option>
+         {/* // <Option value="10,001+ employees">10,001+ employees</Option> */}
+
         </Select>
       </Form.Item>
       
@@ -59,9 +61,9 @@ const {setCustomFilter}=props
       //multiselect={true}
       >
         <Select allowClear mode="multiple">
-          <Option value="on-site">on-site</Option>
+          <Option value="on">On-site</Option>
           <Option value="hybrid">Hybrid</Option>
-          <Option value="remort">Remort</Option>
+          <Option value="remote">Remote</Option>
         </Select>
       </Form.Item>
       <Form.Item label="Location" >

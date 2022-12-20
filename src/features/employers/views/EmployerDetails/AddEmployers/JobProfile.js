@@ -62,6 +62,7 @@ function JobProfile(props) {
       return { label: obj.city, value: obj.id };
     });
   }
+  console.log("EmployerList********#############**********",EmployerList)
 
   const dispatch = useDispatch();
 

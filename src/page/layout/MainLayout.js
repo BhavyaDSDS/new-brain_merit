@@ -52,7 +52,7 @@ function MainLayout() {
     dispatch(getInterviewerFilterList());
     dispatch(getJobPostingFilterList());
     dispatch(getInternshipFilterList());
-    dispatch(getEmployerFilterList());
+    dispatch(getEmployerFilterList("is_deleted=false"));
   }, []);
 
   const handleOnCollapse = () => {

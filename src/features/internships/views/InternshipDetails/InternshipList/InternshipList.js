@@ -193,12 +193,12 @@ console.log("Internship List",listInternShip)
         values.company_name.map((item) => (data = data + "__" + item));
       }
      }
-    //  if (values.job_locations != undefined) {
-    //   data = data + "&work_locations__in=" + values.job_locations[0];
-    //   if (values.job_locations.length > 1) {
-    //     values.job_locations.map((item) => (data = data + "__" + item));
-    //   }
-    // }
+     if (values.job_locations != undefined) {
+      data = data + "&location_id__in=" + values.job_locations[0];
+      if (values.job_locations.length > 1) {
+        values.job_locations.map((item) => (data = data + "__" + item));
+      }
+    }
     if (values.primary_tech_skill != undefined) {
       data = data + "&pri_tech_skills__in=" + values.primary_tech_skill[0];
       if (values.primary_tech_skill.length > 1) {
@@ -232,13 +232,13 @@ console.log("Internship List",listInternShip)
     //   }
 
     //  }
-    // if (values.work_type != undefined) {
-    //   data = data + "&job_type__in=" + values.work_type[0];
-    //   if (values.work_type.length > 1) {
-    //     values.work_type.map((item) => (data = data + "__" + item));
-    //   }
+    if (values.work_type != undefined) {
+      data = data + "&type__in=" + values.work_type[0];
+      if (values.work_type.length > 1) {
+        values.work_type.map((item) => (data = data + "__" + item));
+      }
 
-    // }
+    }
 
 
     // values.salary_range_min = values.salary_range[0] * 100000;

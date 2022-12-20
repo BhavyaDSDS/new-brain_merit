@@ -289,15 +289,23 @@ function EmployerPrimaryInfoForm(props) {
 
       // console.log("zzzb=", values.total_fund);
 
+console.log("outside")
+      if(values.total_fund != null && values.total_fund != undefined){
+        if(values.total_fund_type === "M"){
 
-      if(values.total_fund.number != null && values.total_fund != undefined){
+             values.total_fund = values.total_fund * 1000000;
+             console.log("Inside",values.total_fund_type,values.total_fund)
 
-        if(values.total_fund.type === "M"){
-             values.total_fund.number = values.total_fund.number * 1000000;
-        } else if(values.total_fund.type === "B"){
-          values.total_fund.number = values.total_fund.number * 1000000000;
+        } else if(values.total_fund_type === "B"){
+
+          values.total_fund= values.total_fund * 1000000000;
+          console.log("Inside",values.total_fund_type,values.total_fund)
+
         }else{
-          values.total_fund.number = values.total_fund.number * 1000;
+
+          values.total_fund = values.total_fund * 1000;
+          console.log("Inside",values.total_fund_type,values.total_fund)
+
         }
 
       }
@@ -327,33 +335,33 @@ function EmployerPrimaryInfoForm(props) {
       setLogo(employerDetails.logo);
 
       console.log("Employerdetails Totalfund **********##############***********", employerDetails.total_fund)
-      let totalFound
-       if(employerDetails.total_fund.number != null){
+      // let totalFound
+      //  if(employerDetails.total_fund.number != null){
 
-          if(employerDetails.total_fund.type === 'M'){
-              totalFound = {
-                type : employerDetails.total_fund.type,
-                number : employerDetails.total_fund.number / 1000000
-              }
-          }
-          else if(employerDetails.total_fund.type === 'B'){
-            totalFound = {
-              type : employerDetails.total_fund.type,
-              number : employerDetails.total_fund.number / 1000000000
-            }
-          }
-          else{
-            totalFound = {
-              type : employerDetails.total_fund.type,
-              number : employerDetails.total_fund.number / 1000
-            }
-          }
-       } else {
-        totalFound = {
-          type : employerDetails.total_fund.type,
-          number : employerDetails.total_fund.number
-        }
-       }
+      //     if(employerDetails.total_fund.type === 'M'){
+      //         totalFound = {
+      //           type : employerDetails.total_fund.type,
+      //           number : employerDetails.total_fund.number / 1000000
+      //         }
+      //     }
+      //     else if(employerDetails.total_fund.type === 'B'){
+      //       totalFound = {
+      //         type : employerDetails.total_fund.type,
+      //         number : employerDetails.total_fund.number / 1000000000
+      //       }
+      //     }
+      //     else{
+      //       totalFound = {
+      //         type : employerDetails.total_fund.type,
+      //         number : employerDetails.total_fund.number / 1000
+      //       }
+      //     }
+      //  } else {
+      //   totalFound = {
+      //     type : employerDetails.total_fund.type,
+      //     number : employerDetails.total_fund.number
+      //   }
+      //  }
 
 console.log("zzzzzzzzzzzzz",employerDetails.total_fund);
       
@@ -366,19 +374,24 @@ phonenumber={ phone:employerDetails.phone_number.phone,code:employerDetails.phon
 
       // let total;
       //       console.log("In useEffect**************")
-      //       if(employerDetails.total_fund.type != null && employerDetails.total_fund.type==="K")
+           // if(employerDetails.total_fund_type != null && employerDetails.total_fund_type==="K")
       // {
-      //      // total=employerDetails.total_fund.number/1000;
+      //     //  total=employerDetails.total_fund.number/1000;
       //      total=1000;
+      //      total={total_fund_type:employerDetails.total_fund_type,total_fund:employerDetails.total_fund/1000}
       // }
-      //       else if(total_fund.type==="B")
+      //       else if(total_fund_type==="B")
       // {
-      //   // let  total= employerDetails.total_fund.number/1000000000;
-      //   total=1000000000;
+      // // let  total= employerDetails.total_fund.number/1000000000;
+      //  // total=1000000000;
+      //   total={total_fund_type:employerDetails.total_fund_type,total_fund:employerDetails.total_fund/1000000000}
+
       // }
       // else{
       // // let total=employerDetails.total_fund.number/1000000;
-      // total=1000000;
+      // total={total_fund_type:employerDetails.total_fund_type,total_fund:employerDetails.total_fund/1000000}
+
+      // //total=1000000;
       // }
 
       console.log("EEEEEEEEEE ***********############******", employerDetails)
@@ -397,8 +410,8 @@ phonenumber={ phone:employerDetails.phone_number.phone,code:employerDetails.phon
         tagline: employerDetails.tagline,
         technologies: employerDetails.technologies,
         website: employerDetails.website,
-        total_fund: totalFound,
-        //total_fund:employerDetails.total_fund,
+        //total_fund: employerDetails.total_fund,
+       // total_fund_type:employerDetails.total_fund_type,
        // year_founded: moment(employerDetails.year_founded),
         links: employerDetails.links,
         work_type: employerDetails.work_type,
@@ -438,7 +451,7 @@ phonenumber={ phone:employerDetails.phone_number.phone,code:employerDetails.phon
                   initialValues={{
                     
                     phone_number : { phone: "",code: 91, short: 'IN'},
-                    total_fund:{type:"M"}
+                    total_fund_type:"M",
                   }}
 
                
@@ -583,12 +596,12 @@ phonenumber={ phone:employerDetails.phone_number.phone,code:employerDetails.phon
                 >
                   <Input.Group compact>
                     <Form.Item
-                      name={["total_fund", "number"]}
+                      name="total_fund"
                       style={{ width: 120 }}
                     >
                       <InputNumber addonBefore="$" controls={false} />
                     </Form.Item>
-                    <Form.Item name={["total_fund","type"]} noStyle>
+                    <Form.Item name="total_fund_type" noStyle>
                       <Select allowClear defaultValue="M">
                         <Option value="M">M</Option>
                         <Option value="B">B</Option>
